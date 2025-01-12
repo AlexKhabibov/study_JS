@@ -1876,3 +1876,105 @@ P.S. Используйте typeof для проверки, что значен�
 
 
 
+
+
+
+
+/* РАБОТА С ОБЪЕКТАМИ */
+
+// const obj1 = {};
+// const obj2 = {};
+
+// console.log(obj1 === obj2);
+
+
+// const arr1 = [];
+// const arr2 = [];
+
+// console.log(arr1 === arr2);
+
+
+// const message = 'Hello';
+// const result = message;
+
+// console.log(result === message);
+
+
+// const objDog = { name: 'Shteffi' }
+// const objCat = objDog;
+
+// objCat.name = 'asdad';
+// console.log(objCat, objDog);
+
+// console.log(objCat === objDog);
+
+
+
+
+
+// let menu = {
+//     width: 400,
+//     height: 600,
+//     title: "My menu"
+// };
+
+// console.log(menu);
+
+// можем скопировать через спрэд оператор
+// let menu2 = { ...menu };
+// console.log(menu2);
+
+// или через пробежку циклом и копирование всех свойст объектов
+// let menu2 = {};
+
+// for (const key in menu) {
+//     menu2[key] = menu[key]
+// }
+
+// console.log(menu2);
+
+// либо через метод Object.assign()
+
+// let menu2 = {};
+// Object.assign(menu2, menu, objDog) // можно сразу из многих объектов вязть ключи, так оычно делают для объединения объектов, когда из нескольких объектов он берет только уникальные ключи
+// // но лучше использовать более короткую запись
+
+// let menu2 = Object.assign(menu);
+
+// console.log(menu2);
+
+
+
+// const animal1 = {
+//     type: 'Tiger',
+//     color: 'white',
+//     hasFourLegs: true,
+//     isPredator: true,
+//     canDo () {console.log('tiger running')},
+//     nameOfKids: ['Jake', 'Noble', 'Glen']
+// };
+
+// console.log(animal1);
+
+
+// const animal2 = {...animal1}; // копируем ссылку на объект
+// console.log(animal2);
+
+
+// ГЛУБОКОЕ КЛОНИРОВАНИЕ становится возможным благодаря копированию всего содержимого объекта c помощью цикла или рекурсии
+
+// function deepCopy(obj) {
+//     if (typeof obj === 'object' && obj != null && !Array.isArray(obj)) {
+//         const result = {};
+//         for (key in obj) {
+//             result[key] = deepCopy(obj[key]);
+//         }
+//         return result;
+//     }
+//     if (Array.isArray(obj)) {
+//         return obj.map((el) => {
+//             return deepCopy(el);
+//         });
+//     }
+//     return obj;
+// }
