@@ -1670,8 +1670,209 @@ console.log(every([], n => n < 10));
 // → true
 */
 
-let arr = []
-arr.push(1, 2);
-arr.unshift(3)
-arr.join();
-console.log(arr);
+
+
+
+// let arr = []
+// arr.push(1, 2);
+// arr.unshift(3)
+// arr.join();
+// console.log(arr);
+
+
+
+
+// let user = new Object(); // синтаксис "конструктор объекта"
+// console.log(user);
+
+// let user2 = {}; // синтаксис "литерал объекта"
+// console.log(user2);
+
+
+
+
+
+// const array = [1, 2, 3].map(num => { // 2 2 6
+//     if (num % 2) {
+//         return num * 2;
+//     }
+//     console.log(num);
+//     return num;
+// });
+
+
+
+
+// const user3 = {
+//     name: 'Alex',
+//     age: 30,
+//     isAdmin: false
+// };
+
+// user3.hasDog = true;
+// user3['second name'] = 'Jake';
+
+// console.log(user3);
+
+// const user3Keys = Object.keys(user3);
+// console.log(user3Keys);
+
+
+
+// let fruit = prompt("Какой фрукт купить?", "apple");
+
+// let bag = {
+//     [fruit]: 5, // имя свойства будет взято из переменной fruit
+// };
+
+// alert(bag.apple); // 5, если fruit="apple"
+
+
+
+// function makeUserObj(name, age) {
+//     return {
+//         name: name, // можем просто написать name
+//         age: age // можем просто написать age
+//     }
+// };
+
+// let user1 = makeUserObj('Alex', 30);
+// console.log(user1);
+
+// function makeUserArr(name, age) {
+//     return [name, age]
+// };
+
+// let user2 = makeUserArr('Jake', 29)
+// console.log(user2);
+
+// for (const key in user2) {
+//     console.log(key);
+// }
+
+// console.log(Object.values(user2));
+
+// let key = 'Glen';
+
+// let user4 = {
+//     userName: 'Alex',
+//     age: 30
+// }
+
+// console.log(user4[key]);
+
+
+/* Напишите код, выполнив задание из каждого пункта отдельной строкой:
+
+Создайте пустой объект user.
+Добавьте свойство name со значением John.
+Добавьте свойство surname со значением Smith.
+Измените значение свойства name на Pete.
+Удалите свойство name из объекта.
+
+const user = {};
+
+user.name = 'John';
+user.surname = 'Smith';
+console.log(user);
+
+user.name = 'Pete';
+console.log(user);
+
+delete user.name;
+console.log(user);
+*/
+
+
+/* Напишите функцию isEmpty(obj), 
+которая возвращает true, если у объекта нет свойств, иначе false.
+
+Должно работать так:
+
+let schedule = {};
+
+alert( isEmpty(schedule) ); // true
+
+schedule["8:30"] = "get up";
+
+alert( isEmpty(schedule) ); // false
+
+
+
+function isEmpty(obj) {
+    for (let key in obj) {
+        return false
+    }
+    return true
+}
+
+let schedule = {};
+// schedule.age = 30;
+
+console.log(isEmpty(schedule));
+*/
+
+
+
+
+/* Сумма свойств объекта
+
+У нас есть объект, в котором хранятся зарплаты нашей команды:
+
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+
+Если объект salaries пуст, то результат должен быть 0.
+
+function sumSalaries(salaries) {
+    const salariesArray = Object.values(salaries);
+    console.log(salariesArray);
+    // через reduxe
+    return salariesArray.reduce((a, b) => a + b);
+    
+    // или через for..in
+    // let sum = 0;
+    // for (const key in salaries) {
+    //     sum += salaries[key];
+    // }
+    // return sum;
+};
+
+console.log(sumSalaries(salaries));
+ */
+
+
+
+
+/* Умножаем все числовые свойства на 2
+важность: 3
+Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+
+Например:
+
+// до вызова функции
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+// после вызова функции
+menu = {
+  width: 400,
+  height: 600,
+  title: "My menu"
+};
+Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
+
+P.S. Используйте typeof для проверки, что значение свойства числовое.
+ */
+
+
+
