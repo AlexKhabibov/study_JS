@@ -1978,3 +1978,137 @@ P.S. Используйте typeof для проверки, что значен�
 //     }
 //     return obj;
 // }
+
+
+//  console.log('' ||  !'' && false);
+
+
+
+
+
+
+
+
+// СИМВОЛЫ
+
+// let symbol = Symbol.for('symbol1');
+// console.log(symbol);
+
+// const dog = Symbol.for('symbol1')
+// console.log(dog);
+
+// console.log(dog === symbol);
+
+// Symbol.iterator(dog)
+
+
+// symbol = Symbol('symbol11');
+// symbol = 11;
+// console.log(symbol);
+
+
+
+
+// console.log(symbol1 === symbol2); // false
+// console.log('Hello World');
+
+
+// const toStringSymbol = Symbol("toString");
+
+// Array.prototype[toStringSymbol] = function () {
+//     return `${this.length} см голубой шерсти`;
+// };
+
+// console.log([1, 2].toString());
+// console.log([1, 2][toStringSymbol]());
+
+
+// // Создаем символ
+// const uniqueKey = Symbol('uniqueKey');
+// console.log(uniqueKey);
+// // Создаем объект
+// const obj = {};
+
+// // Присваиваем значение с использованием символа как ключа
+// obj[uniqueKey] = 'This is a val symbol';
+
+// // Выводим значение, ассоциированное с символом
+// console.log(obj[uniqueKey]); // "This is a value associated with the symbol"
+// console.log(obj);
+
+// const obj = { name: "Alice", age: 25 };
+// const uniqueKey = "name";
+// console.log(obj[uniqueKey]);  // Выведет: "Alice"
+
+
+
+
+
+
+// КЛАССЫ
+
+// class Rabbit {
+//     constructor(type) {
+//         this.type = type;
+
+//     }
+//     sayHi(text = 'Hello') {
+//         console.log(`${this.type} кролик говорит: '${text}'`);
+//     }
+// }
+// let killerRabbit = new Rabbit("Убийственный");
+// killerRabbit.sayHi('slkfghs')
+
+// let blackRabbit = new Rabbit('black')
+
+
+// let blackRabbit = new Rabbit("Черный");
+
+
+// console.log(killerRabbit);
+// console.log(killerRabbit.speak('Я тебя съем'));
+// killerRabbit.speak = 'hello'
+// console.log(killerRabbit.speak);
+
+
+class Animal {
+
+    constructor(name) {
+        this._name = name;
+    }
+
+    get name () {
+        return this._name;
+    }
+
+    set name (val) {
+        this._name = val;
+    }
+};
+
+const cat = new Animal('sdff');
+// cat.name = 'sdfs';
+console.log(cat);
+
+// console.log(cat);
+
+// let object = new class {
+//     getWord() { return "привет"; }
+// };
+
+// console.log(object.getWord());
+
+// const newColl = new Map();
+// newColl.set('age', 32)
+
+// console.log(newColl.get('age'));
+// console.log(newColl.has('age'));
+
+
+
+// Rabbit.prototype.toString = function () {
+//     return `${this.type} кролик`;
+// };
+// console.log(String(blackRabbit));
+
+

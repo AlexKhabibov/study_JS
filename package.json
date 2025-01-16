@@ -1,0 +1,25 @@
+{
+  "name": "study_js",
+  "version": "1.0.0",
+  "main": "study.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexKhabibov/study_JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexKhabibov/study_JS/issues"
+  },
+  "homepage": "https://github.com/AlexKhabibov/study_JS#readme",
+  "description": "",
+  "devDependencies": {
+    "prop-types": "^15.8.1"
+  }
+}
