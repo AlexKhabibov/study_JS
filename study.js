@@ -1,3 +1,6 @@
+'use strict'
+
+
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -2218,3 +2221,781 @@ console.log(gr1);
 console.log(gr1.has(23));
  * 
  */
+
+
+/** Заимствование метода
+Ранее в этой главе я упоминал, что объект hasOwnProperty можно использо- вать как более надежную альтернативу оператору in, если мы хотим про- игнорировать свойства прототипа. Но что, если нужно включить в словарь слово hasOwnProperty? Тогда вы больше не сможете вызывать этот метод, поскольку его значение будет скрыто за собственным свойством объекта.
+Можете ли вы придумать способ вызова hasOwnProperty для объекта, у ко- торого есть собственное свойство с таким именем?
+
+let map = { one: true, two: true, hasOwnProperty: true };
+
+console.log(Object.prototype.hasOwnProperty.call(map, "two"));
+// → true
+ * 
+ */
+
+
+
+
+
+// const obj1 = {
+//     age: 23,
+//     isAlive: true
+// }
+
+// Object.freeze(obj1);
+
+// delete obj1.age;
+
+// console.log(obj1);
+
+
+
+
+
+// ОШИБКИ
+
+// console.log(true * "monkey") // NaN
+
+// function canYouSpotTheProblem() {
+//     "use strict";
+//     for (let counter = 0; counter < 10; counter++) {
+//         console.log("Супер-пупер!");
+//     }
+// }
+
+// canYouSpotTheProblem()
+
+
+
+
+// function Person(name) { this.name = name; }
+// let ferdinand = new Person("Фердинанд"); // ой
+// console.log(name);
+// // → Фердинанд
+
+
+
+// function test(text, result) {
+//     if (!result()) {
+//         console.log(`Failed: ${text}`);
+//     };
+// }
+
+// test("convert Latin text to uppercase", () => {
+//     return "hello".toUpperCase() == "HELLO";
+// });
+
+// test("convert Greek text to uppercase", () => {
+//     return "Χαίρετε".toUpperCase() == "ΧΑΊΡΕΤΕ";
+// });
+
+// test("don't convert case-less characters", () => {
+//     return " ".toUpperCase() == " ";
+// });
+
+
+
+
+// function promptNumber(question) {
+//     let result = Number(prompt(question));
+//     if (Number.isNaN(result)) throw new Error('Введите число');
+//     else return result;
+// }
+// console.log(promptNumber("Сколько деревьев вы видите?"));
+
+
+
+
+// function lastElement(array) {
+//     if (array.length === 0) {
+//         return { failed: 'введите массив, состоящий из не менее 1 символа' };
+//     } else {
+//         return { lastEl: array[array.length - 1] };
+//     }
+// }
+
+// console.log(lastElement([1, 2, 3]));
+
+
+
+
+// function promptDirection(question) {
+//     let result = prompt(question);
+//     if (result.toLowerCase() == "left") return "Л";
+//     if (result.toLowerCase() == "right") return "П";
+//     throw new Error("Неверное направление: " + result);
+// }
+// function look() {
+//     if (promptDirection("Куда двигаться?") == "L") {
+//         return "дом";
+//     } else {
+//         return "два злых медведя";
+//     }
+// }
+// try {
+//     console.log("Перед вами", look());
+// } catch (error) {
+//     console.log("Что-то пошло не так: " + error);
+// }
+
+
+
+
+// const error = new Error('Это ошибка !!!');
+
+
+// console.log(error);
+// console.log(error.name);
+// console.log(error.message);
+
+
+
+// const data = {name: 'Helen', age: 32};
+// const dataJson2 = JSON.stringify(data);
+
+// // const dataJSON = `{"age": 39, "name": "Alex"}`
+
+// try {
+//     const user1 = JSON.parse(dataJson2)
+
+//     if (!user1.name) {
+//         throw new Error("Имя отсутвует");
+//     }
+//     console.log('Имя:',user1.name);
+// } catch (e){
+//     console.log('Ошибка файла JSON', e.message);
+// }
+
+
+/*
+let i;
+
+for (i = 0; i < 3; i++) {
+    const log = () => {
+        console.log(i);
+    }
+    setTimeout(log, 100);
+}
+
+
+for (let i = 0; i < 3; i++) {
+    const log = () => {
+        console.log(i);
+    }
+    setTimeout(log, 100);
+}
+*/
+
+
+
+
+// // создание объекта без прототипа
+// const obj1 = Object.create(null);
+// console.log(obj1);
+
+// // с прототипом
+// const obj2 = new Object(null)
+// console.log(obj2);
+
+
+
+// const arr = [1, 2, 3, 4, 5]
+// const arr2 = arr.fill('2');
+// console.log(arr);
+// console.log(arr2);
+
+
+
+
+
+
+
+// let isGiftOrdered = true;
+// let isGiftDelivered;
+// let isGiftShipped = !isGiftOrdered; // false
+// isGiftDelivered = !!isGiftShipped; // false
+
+// let orderStatus = isGiftOrdered ? isGiftShipped ? isGiftDelivered ? "Подарок успешно доставлен!" : "Подарок находится в процессе доставки." : "Подарок готовится к отправке." : "Подарок еще не заказан.";
+
+// console.log(orderStatus);
+
+
+
+// let footprints = ["up", "up", "down", "up", "down"];
+
+// let currentPosition = 0;
+
+// for (let footprint of footprints) {
+//     if (footprint === "down") {
+//         currentPosition -= 1;
+//     } else {
+//         currentPosition += 1;
+//     }
+// }
+
+// console.log(currentPosition); // 0 // 1 2 1 2 1
+
+
+
+
+// let moves = ["forward", "right", "forward", "left", "forward", "backward"];
+
+// let currentPosition = [0, 0]; // X, Y 
+// // [0, 1]
+// // [1, 0]
+// // [0, 2]
+// // [-1, 0]
+// // [0, 1]
+// // [0, -1]
+
+// for (let move of moves) {
+//     switch (move) {
+//         case "forward":
+//             currentPosition[1] += 1; // Идти вперед по Y
+//             break;
+//         case "backward":
+//             currentPosition[1] -= 1; // Идти назад по Y
+//             break;
+//         case "right":
+//             currentPosition[0] += 1; // Идти вправо по X
+//             break;
+//         case "left":
+//             currentPosition[0] -= 1; // Идти влево по X
+//             break;
+//     }
+// }
+
+// console.log(currentPosition);
+
+
+
+
+// let numbers = [15, 5];
+// let a = 10;
+// let b = 10;
+
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] > a) a = numbers[i];
+//     if (numbers[i] < b) b = numbers[i];
+// }
+
+// result = `${b}, ${a}`; // a = 15
+
+
+
+
+// Массивы
+
+// let items = ["Меч", "Щит", "Свиток", "Кольцо"];
+
+// console.log([...items.pop()][0]);
+
+// console.log(items);
+
+
+
+// let isNiceKid = true;
+// let giftCount = 0;
+// let naughtyList = ["Билли", "Чарли"];
+
+// if (isNiceKid && !naughtyList.includes("Майк")) {
+//     giftCount++;
+//     console.log(`Санта принес ${giftCount} подарок!`);
+// } else {
+//     console.log("Санта оставил уголь.");
+// }
+
+// console.log((isNiceKid && !naughtyList.includes("Майк")));
+
+
+
+// const movieData = [
+//     { title: "Один дома 1", rating: 8.5 },
+//     { title: "Один дома 2", rating: 7.8 },
+//     { title: "Один дома 3", rating: 6.9 },
+//     { title: "Один дома 4", rating: 5.5 },
+//     { title: "Один дома 5", rating: 4.2 }
+// ];
+
+// const ratedMovie = movieData.sort((a, b) => a.rating - b.rating)[0];
+
+// console.log(ratedMovie['title']);
+
+
+
+
+// let enemies = [
+//     { name: "Гоблин", health: 10 },
+//     { name: "Скелет", health: 20 },
+//     { name: "Орк", health: 30 }
+// ];
+
+// let lowHealthEnemies = enemies.filter(enemy => enemy.health < 30);
+
+// console.log(lowHealthEnemies[1].name[1]);
+
+
+
+
+// Строки
+
+// const a = '34';
+// const b = parseInt(a)
+
+// console.log(a, typeof(a));
+// console.log(b, typeof(b));
+
+// const a1 = 34;
+// const b1 = toString(a1);
+
+// console.log(a1, typeof(a1));
+// console.log(b1, typeof(b1));
+
+
+
+
+// КОЛБЭКИ
+
+// function sayHello(name) {
+//     console.log(`Hello ${name}`);
+// };
+
+// function func(function1, userName) {
+//     function1(userName);
+// };
+
+// func(sayHello, 'Alex');
+
+
+
+// function func2(param) {
+//     console.log(param);
+// }
+
+// function func1(param1) {
+//     return func2(param1);
+// }
+
+
+// func1('Hello');
+
+
+
+// function func1(action, name) {
+//     return action(name);
+// };
+
+// func1((name) => console.log(`Hello ${name}`), 'Alex')
+
+
+
+
+
+// let grinch = {
+//     name: "Гринч",
+//     health: 3000,
+//     power: 5000,
+//     location: "Кто-вилль",
+//     active: false
+// };
+
+// grinch.power = 7000;
+
+// console.log(grinch.active && Object.freeze(grinch));
+
+// grinch.power = 6000;
+
+// console.log(grinch.power);
+
+
+
+
+// let santa = {
+//     name: "Санта",
+//     power: 1000000,
+//     location: "Снежное царство"
+// };
+
+// Object.defineProperty(santa, "festive_aura", {
+//     value: true,
+//     writable: true
+// });
+
+// Object.preventExtensions(santa);
+
+// console.log(Object.isExtensible(santa));
+
+
+
+
+
+// function syncCallback(callback) {
+//     console.log("Перед вызовом колбэка");
+//     callback();
+//     console.log("После вызова колбэка");
+// }
+
+// syncCallback(() => console.log("Колбэк выполнен"));
+
+
+
+
+// function fdghdg(message, timer) {
+//     console.log('1s clg');
+
+//     setTimeout(() => {
+//         console.log(message);
+//     }, timer);
+
+//     console.log('2nd clg');
+// };
+
+// fdghdg('Timer', 2000)
+
+
+
+// function func(param1, param2) {
+//     param1();
+//     param2();
+// };
+
+// function param1() {
+//     console.log('param1');
+// };
+
+// function param2() {
+//     console.log('param2');
+// };
+
+// func(param1, param2);
+
+
+
+
+// let A = new Set(["Кевин", "Санта", "Базз"]);
+// let B = new Set(A);
+// let C = new Set(["Фуллер", "Эльф"]);
+// let D = new Set([...B, ...C]);
+
+
+// let items = new Set(["Трава", "Трава", "Трава", "Дерево", "Дерево", "Земля", "Земля"]);
+
+// console.log(items.size);
+
+
+// let items1 = new Set(["Земля", "Вода", "Земля", "Вода"]); // 2
+// let items2 = new Set(items1); 
+// let items3 = new Set(["Трава", "Дерево", "Дерево", "Алмаз", "Рубин"]); // 4
+// let items4 = new Set([...items2, ...items3]);
+
+
+
+// let items = new Set();
+// let i = 0;
+
+// items.add("рубин").add("золото").add("серебро");
+
+
+
+// let items = new Set([1, 2, 3]);
+// let entries = items.entries();
+// let result = 0;
+
+// for (let entry of entries) {
+//     result += entry[0] + entry[1];
+// };
+
+// console.log(result);
+
+
+
+
+// let items = new Set(['рубин', 'алмаз']);
+
+// console.log(items);
+
+
+
+
+// let items = new Set();
+
+// items.add("рубин").add("золото").add("серебро");
+
+// items.clear();
+
+// items.add("алмаз");
+
+// console.log([...items][0]);
+
+
+
+// let timeLimit = 10;
+// let currentTime = 0;
+
+// function runTimer() {
+//     currentTime += 5;
+// }
+
+
+// while (currentTime < timeLimit) {
+//     runTimer();
+//     console.log(`Прошло ${currentTime} секунд. Кевин все еще в поисках подарков.`);
+// }
+
+// console.log("Время вышло! Кевину пора возвращаться домой.");
+
+
+
+
+// let setFlag = (flag) => flag && "Флаг";
+
+// console.log(setFlag(false), setFlag(true));
+
+
+
+// console.log(Math.abs([-1984, 1985]));
+
+
+
+
+// const champion = {
+//     alias: "Жанна",
+//     powerLevel: 30,
+// };
+
+// champion.powerLevel = 15;
+
+// console.log(champion.powerLevel);
+
+
+
+
+// let guild = {
+//     name: "Рыцари света",
+//     leader: "Леонард"
+// };
+
+// function changeGuildLeader(newLeader) {
+//     let guild = {
+//         name: "Тени ночи",
+//         leader: "Сильвия"
+//     };
+//     console.log(guild);
+
+//     guild.leader = newLeader;
+//     console.log("Новый лидер гильдии: " + guild.leader);
+// };
+
+// changeGuildLeader('df')
+
+
+// const dungeon = {
+//     name: "Подземелье ужасов",
+//     enemies: ["зомби", "скелеты", "пауки", "гномы", "орки"]
+// };
+
+// const enemy = dungeon.enemies.shift();
+// console.log(enemy);
+
+
+
+// console.log({ counter: 0, age: 23 }.age);
+
+
+
+// console.log({counter: 1}.counter + [].length);
+
+
+
+
+// let dragon = {
+//     name: "Смауг",
+//     health: 1000,
+//     abilities: {
+//         fireBreath: true,
+//         flight: true
+//     }
+// };
+
+// let injuredDragon = {
+//     ...dragon,
+//     health: 800,
+//     abilities: {
+//         ...dragon.abilities,
+//         fireBreath: false
+//     }
+// };
+
+
+// console.log(injuredDragon);
+// console.log(injuredDragon.abilities.fireBreath);
+
+
+
+// let student = {
+//     name: "Гарри",
+//     health: 100,
+//     spells: ["Защитный щит", "Левитация"],
+//     inventory: ["Палочка", "Зелье силы"]
+// };
+
+// let upgradedStudent = {
+//     ...student,
+//     health: 100,
+//     spells: [...student.spells, "Огненный шар"],
+//     inventory: [...student.inventory, "Мантия невидимости"],
+// };
+
+// // console.log(upgradedStudent.spells.length);
+// console.log(upgradedStudent);
+
+
+// Деструктуризация
+
+// let champions = ["Ahri", "Ashe", "Lee Sin"];
+
+// let [val1, val2, val3] = champions;
+// console.log(val1, val2, val3);
+
+
+// let { name: playerName } = { name: "Джейн" };
+// console.log(playerName);
+
+
+
+
+// let health = 10;
+// let mana = 20;
+
+// function getPlayerInfo({ name, stats: { health, mana = 10 } }) {
+//     return health + mana;
+// }
+
+// let playerInfo = {
+//     name: "Майк",
+//     stats: {
+//         health: 100,
+//         mana: 50,
+//     },
+// };
+
+// console.log(getPlayerInfo(playerInfo));
+
+
+
+// let inventory = ["меч", "щит", "зелье", 'dfsf'];
+// let [,,,val] = inventory;
+// console.log(val);
+
+
+
+
+// Computed Property (вычисляемое свойство)
+
+// function createPlayer(name, level) {
+//     return {
+//         name,
+//         level,
+//         health: level * 10,
+//         [`${name}Weapon`]: "Палка",
+//     };
+// }
+
+// let name = "Mike";
+// let player = createPlayer(name, 10);
+
+// console.log(player[name + "Weapon"]);
+
+
+
+
+// Дескрипторы свойств
+
+// const user = {};
+
+
+// user.name = 'sdfs';
+// user.name = 'sd'; // имя можно поменять по умолчанию
+
+// // посмотреть дескрипторы
+// console.log(Object.getOwnPropertyDescriptor(user, "name")); 
+
+
+// // Изменить дескрипторы
+// Object.defineProperty(user, 'name', {
+//     value: "Alice",
+//     writable: false,     // ❌ Запрещаем менять
+//     enumerable: true,    // ✅ Можно перебирать (for..in)
+//     configurable: false // delete user.name не работает, так же изменение дескрипторов заблокировано
+// });
+
+// // user.name = 'dfsf'; // имя не меняется(!)
+
+// console.log(Object.getOwnPropertyDescriptor(user, "name")); 
+
+
+
+
+// const obj = {};
+
+// Object.defineProperty(obj, 'prop', {
+//   value: 42,
+//   configurable: false,
+// });
+
+// delete obj.prop; // typeError
+
+// // console.log(obj.prop); // 42
+
+
+
+
+// const user = {
+//     age: 34,
+//     name: 'Alex'
+// };
+
+// const user1 = {...user}
+
+// console.log(user1); 
+// // копию можно делать, но вывести в консоль не даст, так как по умолчанию нельзя итерировать объект (console.log([...user]);)
+
+
+
+// Характеристики объекта 
+
+// const player1 = {
+//     name: "Макс",
+//     frags: 10,
+// };
+
+// const player2 = {
+//     name: "Дастин",
+//     frags: 15,
+// };
+
+// Object.freeze(player1) && Object.freeze(player2);
+// console.log(Object.getOwnPropertyDescriptor(player1, 'name'));
+// console.log(Object.getOwnPropertyDescriptor(player2, 'name'));
+
+// const players = { ...player1, ...player2 }; // создали новый объект, он не заморожен
+
+// players.frags = 5;
+
+// console.log(players.frags);
+
+
+
+
+// const player1 = {
+//     name: "Макс",
+//     frags: 10,
+//     arr: [{ a: 1 }, { b: 1 }]
+// };
+
+// Object.freeze(player1);
+
+// player1.arr[0] = {c: 1};
+
+// console.log(player1);
