@@ -1,6 +1,7 @@
 'use strict'
 
 
+
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -2999,3 +3000,440 @@ for (let i = 0; i < 3; i++) {
 // player1.arr[0] = {c: 1};
 
 // console.log(player1);
+
+
+
+// Array.prototype.myArrayFunction = function (arr) {
+//     return [...new Set([...this, ...arr])];
+// };
+
+// console.log([2, 4, 6].myArrayFunction([0, 2, 4, 6]));
+
+
+
+// function Character(name, health) {
+//     this.name = name;
+//     this.health = health;
+// }
+
+// Character.prototype.takeDamage = function (damage) {
+//     this.health -= damage;
+//     console.log(this.name + " получил урон. Здоровье: " + this.health);
+// };
+
+// function Player(name, health, power) {
+//     Character.call(this, name, health);
+//     this.power = power;
+// }
+
+// Player.prototype = Object.create(Character.prototype);
+// Player.prototype.constructor = Player;
+
+// Player.prototype.attack = function (target) {
+//     const damage = this.power * 2;
+//     target.takeDamage(damage);
+//     console.log("Вы атаковали " + target.name + " и нанесли " + damage + " урона!");
+// };
+
+// const player1 = new Player("Воин", 100, 20);
+// const player2 = new Player("Маг", 80, 30);
+
+// player1.attack(player2);
+
+
+
+// String.prototype.countChars = function () {
+//     return this.length;
+// };
+
+// let message = "Макс";
+
+// console.log(message.length);
+// console.log(message.countChars());
+
+
+
+// let num1 = Number(prompt('Введите num1'));
+// let num2 = Number(prompt('Введите num2'));
+// console.log('num1:', num1, ', num2:', num2);
+
+// if (num1 <= 1 && num2 >= 3) console.log(true);
+// else console.log(false);
+
+
+
+
+
+// let num = +prompt();
+// let number = String(num);
+
+// let number1 = number % 10; 
+// let number10 = number % 100 - number1;
+// let number100 = Math.floor(number / 100)
+
+// console.log(`в числе ${number} - сотен: ${number100}, десяток: ${number10}, единиц: ${number1}`);
+
+// if (number.length === 2) {
+//     console.log(`в числе ${number} -  десяток: ${number[0]}, единиц: ${number[1]}`);
+// } else if (number.length === 3) {
+//     console.log(`в числе ${number} - сотен: ${number[0]}, десяток: ${number[1]}, единиц: ${number[2]}`);
+// } else if (number.length === 4) {
+//     console.log(`в числе ${number} - сотен: ${number[1]}, десяток: ${number[2]}, единиц: ${number[3]}`);
+// }
+
+
+
+
+
+// const pow = (number, pow) => number ** pow + 3 ** pow;
+
+// console.log(pow(2, 3));
+
+
+// function findMaxNum(num1, num2, num3) {
+//     if (num1 > num2 && num1 > num3) {
+//         console.log(`число: ${num1} больше чем числа ${num2} и ${num3}`);
+//     } else if (num2 > num1 && num2 > num3) {
+//         console.log(`число: ${num2} больше чем числа ${num1} и ${num3}`);
+//     } else if (num3 > num1 && num3 > num1) {
+//         console.log(`число: ${num3} больше чем числа ${num1} и ${num2}`);
+//     } else {
+//         console.log('числа равны');
+//     }
+// };
+
+// findMaxNum(+prompt(),+prompt(),+prompt())
+
+
+
+
+// for (let index = 0; index <= 10; index++) {
+//     if (index === 0) {
+//         console.log(`${index} - это ноль`);
+//     } else if (index % 2 === 0) {
+//         console.log(`${index} - четное число`);
+//     } else {
+//         console.log(`${index} - нечетное число`);
+//     }
+// }
+
+// for (let i = 0; i <= 10; i++) {
+//     console.log(`${i} - ${i === 0 ? 'это ноль' : i % 2 === 0 ? 'четное число' : 'нечетное число'}`);
+// }
+
+
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// const arr1 = arr.slice(0, 3);
+// const arr2 = arr.slice(3, arr.length);
+
+// // const arr3 = arr1.concat(arr2);
+// const arr3 = [...arr1, ...arr2]
+// console.log(arr3);
+
+
+
+
+/*
+
+const randomArr = (arrLength) => {
+    const arr = [];
+    for (let i = 0; i <= arrLength; i++) {
+        arr.push(Math.floor(Math.random() * 10) + 1)
+    }
+    
+    return arr;
+};
+
+
+const arrElSum = (arr) => {
+    console.log(arr);
+
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    return sum;
+};
+
+
+const arrFindMinNum = (arr) => {
+    console.log(arr);
+    let minNum = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] < minNum) {
+            minNum = arr[i]
+        };
+    }
+    return minNum;
+}
+
+
+const isArrHasNum3 = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === 3) {
+            console.log(arr);
+            return 'массив содержит цифру 3';
+        }
+    }
+    return arr;
+}
+
+console.log(arrElSum(randomArr(5)));
+console.log(arrFindMinNum(randomArr(5)));
+console.log(isArrHasNum3(randomArr(5)));
+
+*/
+
+/*
+const numbers = {
+    keyin1: 1,
+    keyin2: 2,
+    keyin3: 3,
+    keyin4: 4,
+    keyin5: 5,
+    keyin6: 6,
+    keyin7: 7,
+};
+
+const func = (obj) => {
+    // Object.keys(obj).forEach(element => {
+    //     if (obj[element] >= 3) {
+    //         console.log(obj[element]);
+    //     }
+    // });
+
+    // for (let key in obj) {
+    //     if (obj[key] >= 3) {
+    //         console.log(obj[key]);
+    //     }
+    // }
+}
+
+
+    // let objValues = Object.values(numbers);
+    // objValues.forEach(val => {
+    //     console.log(val);
+    // });
+    
+    // console.log(objValues);
+
+    func(numbers)
+
+   
+    
+    // let objValues = Object.values(numbers);
+    // console.log(objValues);
+    // let findVal = objValues.filter(val => val >= 3);
+    // console.log(findVal);
+    */
+
+
+
+
+
+// const post = {
+//     author: "John", // вывести этот текст
+//     postId: 23,
+//     comments: [
+//         {
+//             userId: 10,
+//             userName: "Alex",
+//             text: "lorem ipsum",
+//             rating: {
+//                 likes: 10,
+//                 dislikes: 2, // вывести это число
+//             },
+//         },
+//         {
+//             userId: 5, // вывести это число
+//             userName: "Jane",
+//             text: "lorem ipsum 2", // вывести этот текст
+//             rating: {
+//                 likes: 3,
+//                 dislikes: 1,
+//             },
+//         },
+//     ],
+// };
+
+// console.log(post.author);
+// console.log(post.comments[0].rating.dislikes);
+// console.log(post.comments[1].userId);
+// console.log(post.comments[1].text);
+
+
+
+
+
+
+// const products = [
+//     {
+//         id: 3,
+//         price: 200,
+//     },
+//     {
+//         id: 4,
+//         price: 900,
+//     },
+//     {
+//         id: 1,
+//         price: 1000,
+//     },
+// ];
+
+// products.forEach((product) => product.price *= 0.85);
+// console.log(products);
+
+// const updatedProducts = products.map(product => ({
+//     ...product,
+//     price: product.price * 0.85
+// }));
+
+// console.log(updatedProducts);
+
+
+// 1. Необходимо вывести в консоль массив продуктов в котором есть хоть одна фотография используя метод filter. Исходные данные - массив products.
+// 2. Необходимо отсортировать массив products используя метод sort по цене, начиная с самой маленькой, заканчивая самой большой ценой, после чего вывести отсортированный массив в консоль.
+
+// const products = [
+//     {
+//         id: 3,
+//         price: 127,
+//         photos: [
+//             "1.jpg",
+//             "2.jpg",
+//         ],
+//     },
+//     {
+//         id: 5,
+//         price: 499,
+//         photos: [],
+//     },
+//     {
+//         id: 10,
+//         price: 26,
+//         photos: [
+//             "3.jpg",
+//         ],
+//     },
+//     {
+//         id: 8,
+//         price: 78,
+//     },
+// ];
+
+// console.log(products.filter(product => 'photos' in product && product.photos.length !== 0));
+
+
+
+// const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+// const arr2 = [1, 2, 3, 4, 5, 6, 7];
+// const newArr = [];
+
+// if (arr1.length === arr2.length) {
+
+//     for (let i = 0;  i < arr1.length;  i++) {
+//         newArr[arr1[i]] = arr2[i]
+//     }
+// } else {console.log('массивы не равны');}
+
+// console.log(newArr);
+
+
+
+
+
+// const obj = { x: 1, y: 2, z: 3 };
+
+// for (let key in obj) {
+//     console.log(obj[key] ** 2, key += '2');
+// }
+
+// console.log(Object.keys(obj));
+
+
+
+
+// const obj = {
+//     key1: {
+//         key1: 1,
+//         key2: 2,
+//         key3: 3,
+//     },
+//     key2: {
+//         key1: 4,
+//         key2: 5,
+//         key3: 6,
+//     },
+//     key3: {
+//         key1: 7,
+//         key2: 8,
+//         key3: 9,
+//     },
+// }
+
+
+
+// let res = 0;
+// for (const key in obj) {
+//     res = Object.values(obj[key]).reduce((a, b) => a + b);
+// }
+
+
+
+// const numbers = [3, 7, 2, 9];
+
+// let sum = 0;
+// numbers.map(num => sum += num);
+
+// console.log(sum);
+
+
+
+// const deepNestedArray = [1, [2, [3, [4]]]];
+
+// // Если не указать глубину, по умолчанию метод распакует на 1 уровень:
+// const newArr = deepNestedArray.flat(3);
+// console.log(newArr);
+
+// // Указываем глубину 2:
+// console.log(deepNestedArray.flat(2));  // [1, 2, 3, [4]]
+
+// // Указываем глубину 3:
+// console.log(deepNestedArray.flat(3));  // [1, 2, 3, 4]
+
+
+
+// const idEl = document.getElementById('super_link');
+// console.log(idEl);
+
+// const El = document.querySelectorAll('.card-link');
+// El.forEach(el => el.textContent = 'ссылка');
+
+// const El = document.querySelectorAll('.card-body > .card-link');
+// console.log(El);
+
+
+// const El = document.querySelector('[data-number = "50"]');
+// console.log(El);
+
+// const El = document.querySelector('title')
+// console.log(El.textContent);
+
+// const EL = document.querySelector('.card-title');
+// console.log(EL.parentNode);
+
+
+// const pEL = document.createElement('p').textContent = 'Привет';
+// console.log(pEL);
+
+// const cardEl = document.querySelector('.card')
+// cardEl.prepend(pEL);
+// console.log(cardEl);
+
+
+// const h6El = document.querySelector('h6').remove();
+// console.log(h6El);
