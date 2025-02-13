@@ -2,6 +2,11 @@
 
 
 
+
+
+
+
+
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -3329,20 +3334,39 @@ const func = (obj) => {
 
 
 
-// const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
-// const arr2 = [1, 2, 3, 4, 5, 6, 7];
+// const arr11 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс'];
+// const arr22 = [1, 2, 3, 4, 5, 6, 7];
+
 // const newArr = [];
 
-// if (arr1.length === arr2.length) {
-
-//     for (let i = 0;  i < arr1.length;  i++) {
-//         newArr[arr1[i]] = arr2[i]
+// if (arr11.length === arr22.length) {
+//     for (let i = 0; i < arr11.length; i++) {
+//         newArr[arr11[i]] = arr22[i];
 //     }
-// } else {console.log('массивы не равны');}
+//     console.log(newArr);
+// }
 
-// console.log(newArr);
 
+// promise
+// const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+// const arr2 = [1, 2, 3, 4, 5, 6, 7];
 
+// function createNewArr(arr1, arr2) {
+//     return new Promise((resolve, reject) => {
+//         const newArr = [];
+//         if (arr1.length === arr2.length) {
+//             for (let i = 0; i < arr1.length; i++) {
+//                 newArr[arr1[i]] = arr2[i];
+//                 resolve(newArr);
+//             }
+//         }
+//         reject("❌ Массивы не равны!");
+//     });
+// }
+
+// createNewArr(arr1, arr2)
+//     .then(console.log) // ✅ Выведет объект
+//     .catch(console.error) // ❌ Выведет ошибку, если длины массивов не совпадают
 
 
 
@@ -3437,3 +3461,204 @@ const func = (obj) => {
 
 // const h6El = document.querySelector('h6').remove();
 // console.log(h6El);
+
+
+
+
+// PROMISES
+
+
+// const fetchData = new Promise((resolve, reject => { resolve('Hello') }));
+
+
+// fetchData.then(data => { console.log(data) })
+
+
+
+
+
+// async function fetchData() {
+//     console.log("Загрузка данных...");
+//     await new Promise(resolve => setTimeout(resolve, 1000));
+//     console.log("Данные загружены!");
+// }
+
+// fetchData();
+
+
+
+
+// const promise1 = new Promise((resolve, reject) => {
+//     console.log("Создаем промис...");
+//     resolve("Промис выполнен!");
+//     reject('Error dfsgs')
+// });
+
+// promise1.then((result) => console.log(result));
+// console.log("Этот код выполнится до обработки промиса.");
+
+
+
+// const myPromise = Promise.resolve("Промис выполнен!");
+
+// myPromise.then(console.log);
+
+
+
+// const arr1 = [1, 2, 3, 4, 5, 6];
+// const obj1 = { a: 1, b: 2, c: 3 };
+
+
+// arr1.forEach(item => console.log(item))
+
+
+// массивы
+// for (const element of arr1) {
+//     console.log(element);
+// }
+
+// объекты
+// for (const key in obj1) {
+//     if (Object.prototype.hasOwnProperty.call(obj1, key)) {
+//         console.log(obj1[key]);
+//     }
+// }
+
+
+// const myPromise = Promise.resolve("Промис выполнен!");
+// const promise1 = Promise.reject('promise failed')
+
+// myPromise.then(console.log);
+// promise1.catch(console.log())
+
+
+// const promise11 = new Promise(function (resolve, reject) {
+//     resolve('Good, go go go');
+//     reject('Bad, sropstopstop')
+// });
+
+// // promise11.then(res => console.log(res));
+// promise11.catch(res => console.log(res));
+
+
+
+
+
+// работа с json
+// const jsonData = {
+//     "name": "Иван",
+//     "age": 25,
+//     "isStudent": false,
+//     "skills": ["JavaScript", "React", "Node.js"],
+//     "address": {
+//         "city": "Москва",
+//         "country": "Россия"
+//     }
+// }
+
+// const data = JSON.parse(jsonData);
+// console.log(data);
+
+
+
+
+// const data = fetch('https://jsonplaceholder.typicode.com/users/1')
+// data.then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.error('cant fetch data'))
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users/1')
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.error(error)
+// );
+
+
+
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1') // Отправляем GET-запрос
+//     .then(response => {
+//         if (!response.ok) {
+//             throw new Error(`Ошибка HTTP: ${response.status}`); // Обрабатываем ошибку
+//         }
+//         return response.json(); // Преобразуем ответ в JSON
+//     })
+//     .then(data => {
+//         console.log('Полученные данные:', data); // Работаем с полученными данными
+//     })
+//     .catch(error => {
+//         console.error('Ошибка запроса:', error); // Обрабатываем возможные ошибки
+//     });
+
+
+// через async await
+// async function getData() {
+//     try {
+//         let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+//         if (!response.ok) {
+//             throw new Error(response.status)
+//         }
+//         let data = await response.json();
+//         console.log(data);
+//     } catch (error) {
+//         console.error(error)
+//     }
+// }
+
+// getData()
+
+
+// async function func() {
+
+//     await fetch('https://jsonplaceholder.typicode.com/users/1')
+//         .then(response => response.json())
+//         .then(data => console.log(data))
+//         .catch(error => console.error('cant fetch data'))
+// }
+
+// func();
+
+
+
+
+// async function getStarWarsMovie(id) {
+//     const response = await fetch(`https://swapi.dev/api/films/${id}/`)
+//     if (response.ok) { console.log('ответ получен', response) }
+//     return response.json()
+// }
+
+// const movies = getStarWarsMovie(1).then((movie) => {
+//     console.log(movie.title)
+//     // *2
+// })
+
+// console.log('результат вызова функции', movies)
+// // *3
+
+
+
+
+
+// let dataJson = fetch('https://jsonplaceholder.typicode.com/users/1')
+
+// dataJson
+//     .then(response => response.json())
+//     .then(data => console.log(data))
+//     .catch(error => console.error('cant fetch data - ', error));
+
+
+
+
+// let dataJson = fetch('https://jsonplaceholder.typicode.com/users/1')
+
+// async function getData(url) {
+//     const response = await fetch(url);
+//     const data = await response.json()
+//     console.log(data);
+// };
+
+// getData().catch(error => console.error("Произошла ошибка:", error));
