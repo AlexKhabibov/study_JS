@@ -1,12 +1,6 @@
 'use strict'
 
 
-
-
-
-
-
-
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -3662,3 +3656,117 @@ const func = (obj) => {
 // };
 
 // getData().catch(error => console.error("Произошла ошибка:", error));
+
+
+
+// const url = 'https://jsonplaceholder.typicode.com/users/1';
+
+// fetch(url)
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error('Ошибка ответа от сервера!', error))
+
+
+
+
+// async function hello() {
+//     let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+//     let data = await response.json();
+//     return data;
+// }
+
+// hello().then(console.log); // "Привет!"
+// console.log(hello()); // Promise { 'Привет!' }
+
+
+
+
+
+// async function getData() {
+// let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+// let data = await response.json();
+//     console.log(data);
+// }
+
+// getData(); // Ждет fetch, потом выводит данные
+
+
+
+
+
+// async function getData() {
+//     try {
+//         let response = await fetch("https://jonplaceholder.typicode.com/todos/1");
+//         let data = await response.json();
+//         return data;
+//     } catch (error) {
+//         console.log('Error in getData()', error);
+//     }
+// }
+
+// getData();
+
+
+
+
+// const Els = document.querySelectorAll('.dropdown-item');
+// console.log(Els);
+// Els.forEach(item => item.classList.add('super-dropdown'));
+// console.log(Els);
+
+
+// const El = document.querySelector('.btn');
+// console.log(El);
+// El.classList.toggle('btn-secondary');
+
+
+// const El = document.querySelectorAll('.menu');
+// console.log(El);
+// El.forEach(item => item.classList.remove('dropdown-menu'));
+
+
+// const El = document.querySelector('div.dropdown');
+// console.log(El);
+// El.insertAdjacentHTML("afterend", `<a href="#">link</a>`)
+
+
+// const El = document.querySelectorAll('#dropdownMenuButton');
+// console.log(El);
+// El.forEach(item => item.id = 'superDropdown');
+// console.log(El);
+
+
+// const El = document.querySelectorAll('[aria-labelledby="dropdownMenuButton"]');
+// console.log(El);
+// El.forEach(element => element.dataset.dd = 3);
+// console.log(El);
+
+
+
+// const btnEl = document.querySelector('ul');
+
+// function func (e) {
+//     console.log( e.target.textContent, e.currentTarget);
+// }
+
+// btnEl.addEventListener('click', func);
+
+
+// window.addEventListener('DOMContentLoaded', function () {
+//     console.log('tags downloaded');
+// });
+
+// window.onload = function () { console.log('downloaded') }
+
+
+// const bodyEl = document.querySelector('body')
+// bodyEl.addEventListener('click', function (e) {
+//     if (e.target.className === 'super_element') {
+//         console.log(`класс super_element присутсвует у тега ${e.target.tagName.toLowerCase()} на который вы нажали`);
+//     } else { console.log(`класс super_element отуствует у тега ${e.target.tagName.toLowerCase()} на который вы нажали`); }
+// });
+
+
+// const areaEl = document.querySelector('#area').addEventListener('mouseover', function (e) {
+//     console.log('Вы навели на textarea');
+// });
