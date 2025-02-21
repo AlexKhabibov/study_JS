@@ -3770,3 +3770,67 @@ const func = (obj) => {
 // const areaEl = document.querySelector('#area').addEventListener('mouseover', function (e) {
 //     console.log('Вы навели на textarea');
 // });
+
+// const formEl = document.querySelector('#form');
+// const spanEl = document.querySelector('.form__span');
+
+// formEl.addEventListener('input', function () {
+//     spanEl.textContent = formEl.value
+// });
+
+
+// const bntEl = document.querySelector('.messageBtn');
+// const messageEl = document.querySelector('.message');
+
+// bntEl.addEventListener('click', function () {
+//     messageEl.classList.add('animate_animated', 'animate_fadeInLeftBig');
+//     messageEl.style.visibility = 'hidden';
+// });
+
+// const formEl = document.querySelector('form');
+// const inputEl = formEl.querySelector('input.form-control');
+// const selectEl = formEl.querySelector('select.form-control');
+// const btnEl = formEl.querySelector('button');
+
+// btnEl.addEventListener('click', (e) => {
+//     if (inputEl.value === '' && selectEl.value === '') {
+//         inputEl.classList.add('error');
+//         selectEl.classList.add('error');
+//         e.preventDefault();
+//     } else {
+//         inputEl.classList.remove('error');
+//         selectEl.classList.remove('error');
+//         formEl.submit();
+//     }
+// });
+
+// inputEl.addEventListener('input', (e) => {
+//     if (inputEl.value === '' && selectEl.value === '') {
+//         inputEl.classList.add('error');
+//         selectEl.classList.add('error');
+//         e.preventDefault();
+//     } else if (inputEl.value !== '' && selectEl.value !== '') {
+//         inputEl.classList.remove('error');
+//         selectEl.classList.remove('error');
+//         formEl.submit();
+//     };
+// });
+
+
+
+
+
+// const url = 'https://jsonplaceholder.typicode.com/todos/1';
+
+// async function getDataFromUrl(url) {
+//     const idEl = document.querySelector('.user__id');
+//     const titleEl = document.querySelector('.user__title');
+
+//     const response = await fetch(url);
+//     const dataJson = await response.json();
+
+//     idEl.textContent = dataJson.id;
+//     titleEl.textContent = dataJson.title;
+// };
+
+// getDataFromUrl(url);
