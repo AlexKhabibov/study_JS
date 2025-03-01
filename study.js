@@ -3834,3 +3834,298 @@ const func = (obj) => {
 // };
 
 // getDataFromUrl(url);
+
+
+
+
+
+// const user = {
+//     name: 'Alex',
+//     age: 34,
+//     address: {
+//         city: 'Yalta',
+//         rep: 'Crimea'
+//     },
+//     likes: [
+//         1, 2, 3, 4, 5
+//     ]
+// }
+
+// const user2 = JSON.stringify(user);
+// user.likes = [1, 2, 3, 3, 3, 3, 0]
+
+// const user11 = JSON.stringify(user);
+// console.log(user11);
+// console.log(user2);
+
+
+
+
+// const arr = [1, 5, 7, 9];
+// console.log(Math.min(...arr));
+
+
+
+// function createCounter() {
+//     let counter = 0;
+
+//     return {
+//         increment() { counter++ },
+//         decrement() { counter-- },
+//         getCounter() { return counter }
+//     };
+// };
+
+// const counter = createCounter();
+// counter.increment()
+// console.log(counter.getCounter());
+
+
+
+
+// Свойство title (название) - строка, название книги.
+// Свойство author (автор) - строка, имя автора книги.
+// Свойство pages (количество страниц) - число, количество страниц в книге.
+// Метод displayInfo() - выводит информацию о книге (название, автор и количество страниц).
+
+// class Book {
+//     constructor(title, author, pages) {
+//         this.title = String(title);
+//         this.author = String(author);
+//         this.pages = Number(pages);
+//     }
+
+//     displayInfo(){
+//         console.log(`название книги: ${this.title}, автор: ${this.author} и количество страниц: ${this.pages}`);
+//     }
+// }
+
+// const book1 = new Book('BookName', 'AuthorOfBook', 234);
+// console.log(book1);
+// book1.displayInfo()
+
+
+
+
+// Задание 2: ""Управление списком студентов""
+// Реализуйте класс Student, представляющий студента, со следующими свойствами и методами:
+
+// Свойство name (имя) - строка, имя студента.
+// Свойство age (возраст) - число, возраст студента.
+// Свойство grade (класс) - строка, класс, в котором учится студент.
+// Метод displayInfo() - выводит информацию о студенте (имя, возраст и класс).
+// javascript
+
+// class Student {
+//     constructor(name, age, grade) {
+//         this.name = String(name);
+//         this.age = Number(age);
+//         this.grade = Number(grade);
+//     };
+
+//     displayInfo() {
+//         console.log(`имя студента: ${this.name}, возвраст: ${this.age} и грейд: ${this.grade}`);
+//     };
+// };
+
+// const student1 = new Student('Alex', 23, 4);
+// console.log(student1);
+
+
+
+
+// Реализуйте класс Employee (сотрудник), который имеет следующие свойства и методы:
+
+// Свойство name (имя) - строка, имя сотрудника.
+// Метод displayInfo() - выводит информацию о сотруднике (имя).
+
+// Реализуйте класс Manager (менеджер), который наследует класс Employee и имеет дополнительное свойство и метод:
+// Свойство department (отдел) - строка, отдел, в котором работает менеджер.
+// Метод displayInfo() - переопределяет метод displayInfo() родительского класса и выводит информацию о менеджере (имя и отдел).
+
+// class Employee {
+//     constructor(name) {
+//         this.name = String(name)
+//     };
+
+//     displayInfo() {
+//         return `Сотрудник ${this.name} из класса Employee`;
+//     };
+// };
+
+// class Manager extends Employee {
+//     constructor(name, department) {
+//         super(name)
+//         this.department = String(department);
+//     };
+
+//     displayInfo() {
+//         return `Сотрудник ${this.name} из класса Employee работает в отделе ${this.department}`;
+//     };
+// };
+
+// const employee = new Employee("John Smith");
+// console.log(employee.displayInfo());
+
+// const manager = new Manager();
+// console.log(manager.displayInfo());
+
+
+
+
+// Реализуйте класс Order (заказ), который имеет следующие свойства и методы:
+
+// Свойство orderNumber (номер заказа) - число, уникальный номер заказа.
+// Свойство products (продукты) - массив, содержащий список продуктов в заказе.
+// Метод addProduct(product) - принимает объект product и добавляет его в список продуктов заказа.
+// Метод getTotalPrice() - возвращает общую стоимость заказа, основанную на ценах продуктов.
+
+// class Order {
+//     constructor(orderNumber) {
+//         this.orderNumber = orderNumber;
+//         this.products = [];
+//     }
+
+//     addProduct(product) {
+//         this.products.push(product);
+//     }
+
+//     getTotalPrice() {
+//         return this.products.reduce((sum, product) => sum + product.productPrice, 0);
+//     }
+// }
+
+// class Product {
+//     constructor(productName, productPrice) {
+//         this.productName = productName;
+//         this.productPrice = productPrice;
+//     }
+// }
+
+// const order1 = new Order(12345);
+
+// const product1 = new Product('Apple', 100);
+// const product2 = new Product('Banana', 200);
+// const product3 = new Product('Orange', 300);
+
+// order1.addProduct(product1);
+// order1.addProduct(product2);
+// order1.addProduct(product3);
+
+// console.log(order1); 
+// console.log(order1.getTotalPrice());
+
+
+// async function getUserData(id) {
+//     const url = `https://jsonplaceholder.typicode.com/todos/${id}`;
+//     await fetch(url).then(response => response.json())
+//         .then(data => console.log(data))
+//         .catch(error => console.error('cant fetch data - ', error));
+// };
+
+// getUserData(1)
+
+
+
+
+
+
+// async function getUserData(id) {
+//     const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
+//     if (response.status === 200) {
+//         const data = await response.json()
+//         console.log(data);;
+//     } else {
+//         console.log('Ошибка загрузки');
+//     }
+// };
+
+// getUserData(1)
+
+
+
+// async function getUserData2(id) {
+//     let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
+//     if (response.status === 200) {
+//         let jsonData = await response.json();
+//         return jsonData;
+//     } else {
+//         console.log("Данные с сервера не получены");
+//     }
+// };
+
+// getUserData2(2).then(result => {
+//     if (result === undefined) {
+//         console.log("Пользователь не найден");
+//     } else {
+//         console.log(result);
+//     }
+// }).catch(error => console.error('Ошибка загрузки'));
+
+
+// func()
+
+// function func() {
+//     console.log('Hello');
+// }
+
+
+// const func = () => {
+//     console.log('Hello');
+// }
+
+// func()
+
+
+// const a = function name() {
+//     console.log('Hello');
+// };
+
+// a()
+
+
+
+
+
+// function createDiv(e) {
+//     const bodyEl = document.querySelector('body');
+//     const divEl = document.createElement('div');
+//     divEl.textContent = 'Hello, i am div element'
+//     bodyEl.appendChild(divEl);
+//     console.log(e.target);
+// };
+
+// document.addEventListener('click', createDiv);
+
+
+
+
+// const divEl1 = document.querySelector('.div1');
+// const divEl2 = document.querySelector('.div2');
+// const divEl3 = document.querySelector('.div3');
+// const divEl4 = document.querySelector('.div4');
+
+
+// divEl1.addEventListener('click', function (e) {
+//     console.log('div1');
+// });
+
+// divEl2.addEventListener('click', function (e) {
+//     console.log('div2');
+// });
+
+// divEl3.addEventListener('click', function (e) {
+//     console.log('div3');
+// });
+
+// divEl4.addEventListener('click', function (e) {
+//     console.log('div4');
+//     e.stopPropagation(); // остановили всплытие принудительно
+// });
+
+
+
+
+
+
+
