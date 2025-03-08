@@ -3344,26 +3344,7 @@ const func = (obj) => {
 // }
 
 
-// promise
-// const arr1 = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
-// const arr2 = [1, 2, 3, 4, 5, 6, 7];
 
-// function createNewArr(arr1, arr2) {
-//     return new Promise((resolve, reject) => {
-//         const newArr = [];
-//         if (arr1.length === arr2.length) {
-//             for (let i = 0; i < arr1.length; i++) {
-//                 newArr[arr1[i]] = arr2[i];
-//                 resolve(newArr);
-//             }
-//         }
-//         reject("❌ Массивы не равны!");
-//     });
-// }
-
-// createNewArr(arr1, arr2)
-//     .then(console.log) // ✅ Выведет объект
-//     .catch(console.error) // ❌ Выведет ошибку, если длины массивов не совпадают
 
 
 
@@ -3462,80 +3443,6 @@ const func = (obj) => {
 
 
 
-// PROMISES
-
-
-// const fetchData = new Promise((resolve, reject => { resolve('Hello') }));
-
-
-// fetchData.then(data => { console.log(data) })
-
-
-
-
-
-// async function fetchData() {
-//     console.log("Загрузка данных...");
-//     await new Promise(resolve => setTimeout(resolve, 1000));
-//     console.log("Данные загружены!");
-// }
-
-// fetchData();
-
-
-
-
-// const promise1 = new Promise((resolve, reject) => {
-//     console.log("Создаем промис...");
-//     resolve("Промис выполнен!");
-//     reject('Error dfsgs')
-// });
-
-// promise1.then((result) => console.log(result));
-// console.log("Этот код выполнится до обработки промиса.");
-
-
-
-// const myPromise = Promise.resolve("Промис выполнен!");
-
-// myPromise.then(console.log);
-
-
-
-// const arr1 = [1, 2, 3, 4, 5, 6];
-// const obj1 = { a: 1, b: 2, c: 3 };
-
-
-// arr1.forEach(item => console.log(item))
-
-
-// массивы
-// for (const element of arr1) {
-//     console.log(element);
-// }
-
-// объекты
-// for (const key in obj1) {
-//     if (Object.prototype.hasOwnProperty.call(obj1, key)) {
-//         console.log(obj1[key]);
-//     }
-// }
-
-
-// const myPromise = Promise.resolve("Промис выполнен!");
-// const promise1 = Promise.reject('promise failed')
-
-// myPromise.then(console.log);
-// promise1.catch(console.log())
-
-
-// const promise11 = new Promise(function (resolve, reject) {
-//     resolve('Good, go go go');
-//     reject('Bad, sropstopstop')
-// });
-
-// // promise11.then(res => console.log(res));
-// promise11.catch(res => console.log(res));
 
 
 
@@ -3559,155 +3466,8 @@ const func = (obj) => {
 
 
 
-// const data = fetch('https://jsonplaceholder.typicode.com/users/1')
-// data.then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.error('cant fetch data'))
 
 
-
-// fetch('https://jsonplaceholder.typicode.com/users/1')
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.error(error)
-// );
-
-
-
-
-
-
-// fetch('https://jsonplaceholder.typicode.com/posts/1') // Отправляем GET-запрос
-//     .then(response => {
-//         if (!response.ok) {
-//             throw new Error(`Ошибка HTTP: ${response.status}`); // Обрабатываем ошибку
-//         }
-//         return response.json(); // Преобразуем ответ в JSON
-//     })
-//     .then(data => {
-//         console.log('Полученные данные:', data); // Работаем с полученными данными
-//     })
-//     .catch(error => {
-//         console.error('Ошибка запроса:', error); // Обрабатываем возможные ошибки
-//     });
-
-
-// через async await
-// async function getData() {
-//     try {
-//         let response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
-//         if (!response.ok) {
-//             throw new Error(response.status)
-//         }
-//         let data = await response.json();
-//         console.log(data);
-//     } catch (error) {
-//         console.error(error)
-//     }
-// }
-
-// getData()
-
-
-// async function func() {
-
-//     await fetch('https://jsonplaceholder.typicode.com/users/1')
-//         .then(response => response.json())
-//         .then(data => console.log(data))
-//         .catch(error => console.error('cant fetch data'))
-// }
-
-// func();
-
-
-
-
-// async function getStarWarsMovie(id) {
-//     const response = await fetch(`https://swapi.dev/api/films/${id}/`)
-//     if (response.ok) { console.log('ответ получен', response) }
-//     return response.json()
-// }
-
-// const movies = getStarWarsMovie(1).then((movie) => {
-//     console.log(movie.title)
-//     // *2
-// })
-
-// console.log('результат вызова функции', movies)
-// // *3
-
-
-
-
-
-// let dataJson = fetch('https://jsonplaceholder.typicode.com/users/1')
-
-// dataJson
-//     .then(response => response.json())
-//     .then(data => console.log(data))
-//     .catch(error => console.error('cant fetch data - ', error));
-
-
-
-
-// let dataJson = fetch('https://jsonplaceholder.typicode.com/users/1')
-
-// async function getData(url) {
-//     const response = await fetch(url);
-//     const data = await response.json()
-//     console.log(data);
-// };
-
-// getData().catch(error => console.error("Произошла ошибка:", error));
-
-
-
-// const url = 'https://jsonplaceholder.typicode.com/users/1';
-
-// fetch(url)
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
-//     .catch((error) => console.error('Ошибка ответа от сервера!', error))
-
-
-
-
-// async function hello() {
-//     let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-//     let data = await response.json();
-//     return data;
-// }
-
-// hello().then(console.log); // "Привет!"
-// console.log(hello()); // Promise { 'Привет!' }
-
-
-
-
-
-// async function getData() {
-// let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
-// let data = await response.json();
-//     console.log(data);
-// }
-
-// getData(); // Ждет fetch, потом выводит данные
-
-
-
-
-
-// async function getData() {
-//     try {
-//         let response = await fetch("https://jonplaceholder.typicode.com/todos/1");
-//         let data = await response.json();
-//         return data;
-//     } catch (error) {
-//         console.log('Error in getData()', error);
-//     }
-// }
-
-// getData();
 
 
 
@@ -3823,20 +3583,6 @@ const func = (obj) => {
 
 
 
-// const url = 'https://jsonplaceholder.typicode.com/todos/1';
-
-// async function getDataFromUrl(url) {
-//     const idEl = document.querySelector('.user__id');
-//     const titleEl = document.querySelector('.user__title');
-
-//     const response = await fetch(url);
-//     const dataJson = await response.json();
-
-//     idEl.textContent = dataJson.id;
-//     titleEl.textContent = dataJson.title;
-// };
-
-// getDataFromUrl(url);
 
 
 
@@ -4033,37 +3779,6 @@ const func = (obj) => {
 
 
 
-// async function getUserData(id) {
-//     const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`);
-//     if (response.status === 200) {
-//         const data = await response.json()
-//         console.log(data);;
-//     } else {
-//         console.log('Ошибка загрузки');
-//     }
-// };
-
-// getUserData(1)
-
-
-
-// async function getUserData2(id) {
-//     let response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-//     if (response.status === 200) {
-//         let jsonData = await response.json();
-//         return jsonData;
-//     } else {
-//         console.log("Данные с сервера не получены");
-//     }
-// };
-
-// getUserData2(2).then(result => {
-//     if (result === undefined) {
-//         console.log("Пользователь не найден");
-//     } else {
-//         console.log(result);
-//     }
-// }).catch(error => console.error('Ошибка загрузки'));
 
 
 // func()
@@ -4274,6 +3989,28 @@ console.log(`Клиент ${client3.name} заказал(а): ${[...orders.get(c
 
 
 
+// const arr1 = [1, 2, 3, 4, 5, 6];
+// const obj1 = { a: 1, b: 2, c: 3 };
+
+
+// arr1.forEach(item => console.log(item))
+
+
+// массивы
+// for (const element of arr1) {
+//     console.log(element);
+// }
+
+// объекты
+// for (const key in obj1) {
+//     if (Object.prototype.hasOwnProperty.call(obj1, key)) {
+//         console.log(obj1[key]);
+//     }
+// }
+
+
+
+
 
 /**
  * Представьте, что у вас есть класс для управления библиотекой. В этом классе будет приватное свойство для хранения списка книг, а также методы для добавления книги, удаления книги и получения информации о наличии книги.
@@ -4449,86 +4186,6 @@ displayReviews();
 
 
 
-// let generatRandomNum = () => {
-//     return new Promise((resolve, reject) => {
-
-//         setTimeout(() => {
-//             let randomNum = Math.floor(Math.random() * 10) + 1;
-//             if (randomNum) resolve(randomNum);
-//             else reject('Ошибка в блоке генерации случайного числа');
-//         }, 0);
-//     })
-// };
-
-// generatRandomNum().then((result) => {
-//     console.log(result);
-// }).catch((err) => {
-//     console.log(err);
-// });
 
 
 
-
-
-// const fetchData = (url) => {
-//     return new Promise((resolve, reject) => {
-//         fetch(url)
-//             .then((response) => response.json())
-//             .then((data) => resolve(data))
-//             .catch((err) => reject(err));
-//     });
-// };
-
-
-// fetchData('https://jsonplaceholder.typicode.com/posts')
-//     .then(data => console.log(data))
-//     .catch(error => console.error('Ошибка:', error));
-
-
-
-
-
-
-
-// const calculateAB = (a, b) => {
-//     return new Promise((resolve) => {
-//         const sum = Number(a) + Number(b);
-//         resolve(sum)
-//     });
-// };
-
-// calculateAB(12, 4)
-//     .then((result) => console.log(result));
-
-
-
-// const devideNums = (a, b) => {
-//     return new Promise((resolve, reject) => {
-//         (b === 0) ? reject('На 0 делить нельзя') : resolve(a / b);
-//     });
-// };
-
-// devideNums(2, 4).then((result) => console.log(result)).catch((error) => console.error(error))
-
-
-
-
-
-// new Promise((resolve) => {
-//     setTimeout(() => resolve(1), 1000);
-// })
-//     .then((result) => {
-//         console.log(result); // 1
-//         return new Promise((resolve) => {
-//             setTimeout(() => resolve(result * 2), 1000);
-//         });
-//     })
-//     .then((result) => {
-//         console.log(result); // 2
-//         return new Promise((resolve) => {
-//             setTimeout(() => resolve(result * 2), 1000);
-//         });
-//     })
-//     .then((result) => {
-//         console.log(result); // 4
-//     });
