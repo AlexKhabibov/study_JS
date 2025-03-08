@@ -1,6 +1,9 @@
 'use strict'
 
 
+
+
+
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -4129,3 +4132,403 @@ const func = (obj) => {
 
 
 
+// let range = {
+//     from: 1,
+//     to: 5
+// };
+
+// // for (const key in range) {
+// //     console.log(range[key]);
+// // }
+
+// // const keys = Object.keys(range);
+// // keys.forEach(key => {
+// //     console.log(key);
+// // });
+
+// let array = Array.from(range);
+// console.log(array);
+
+
+
+
+
+// const musicCollection = {
+//     musicAlbums: [
+//         { title: 'Perfetto', artist: 'Eros Ramazzotti', year: '2015' },
+//         { title: 'Tina!', artist: 'Tina Terner', year: '2008' },
+//         { title: 'Per Sempre', artist: 'Adriano Celentano', year: '2002' }
+//     ],
+//     [Symbol.iterator]() {
+//         this.index = 0;
+//         return this;
+//     },
+//     next() {
+//         return this.index < this.musicAlbums.length
+//             ? { done: false, value: this.musicAlbums[this.index++] }
+//             : { done: true };
+//     }
+// }
+
+// for (const album of musicCollection) {
+//     console.log(`${album.title} - ${album.artist} (${album.year})`);
+// }
+
+
+
+
+
+/*
+const cooks = new Map();
+
+cooks.set('Виктор', 'Пицца')
+    .set('Ольга', 'Суши')
+    .set('Дмитрий', 'Десерты');
+
+console.log(`Повар Виктор, специализация блюда: ${cooks.get('Виктор')}`);
+console.log(`Повар Ольга, специализация блюда: ${cooks.get('Ольга')}`);
+console.log(`Повар Дмитрий, специализация блюда: ${cooks.get('Дмитрий')}`);
+
+const dishes = new Map();
+
+dishes.set('Пицца Маргарита', 'Виктор')
+    .set('Пицца Пепперони', 'Виктор')
+    .set('Суши Филадельфия', 'Ольга')
+    .set('Суши Калифорния', 'Ольга')
+    .set('Тирамису', 'Дмитрий')
+    .set('Чизкейк', 'Дмитрий');
+
+console.log(`Блюдо: Пицца Маргарита - приготовил: ${dishes.get('Пицца Маргарита')}`);
+console.log(`Блюдо Пицца Пепперони - приготовил: ${dishes.get('Пицца Пепперони')}`);
+console.log(`Блюдо Суши Филадельфия - приготовил: ${dishes.get('Суши Филадельфия')}`);
+console.log(`Блюдо Суши Калифорния - приготовил: ${dishes.get('Суши Калифорния')}`);
+console.log(`Блюдо Тирамису - приготовил: ${dishes.get('Тирамису')}`);
+console.log(`Блюдо Чизкейк - приготовил: ${dishes.get('Чизкейк')}`);
+
+const orders = new Map();
+
+const client1 = { name: 'Алексей' };
+const clientOrder1 = new Set();
+
+clientOrder1.add('Пиццу Пепперони')
+    .add('Тирамису');
+
+const client2 = { name: 'Мария' };
+const clientOrder2 = new Set();
+
+clientOrder2.add('Суши Калифорния')
+    .add('Пиццу Маргарита');
+
+const client3 = { name: 'Ирина' };
+const clientOrder3 = new Set();
+
+clientOrder3.add('Чизкейк');
+
+orders.set(client1, clientOrder1)
+    .set(client2, clientOrder2)
+    .set(client3, clientOrder3);
+
+console.log(`Клиент ${client1.name} заказал(а): ${[...orders.get(client1)]}`);
+console.log(`Клиент ${client2.name} заказал(а): ${[...orders.get(client2)]}`);
+console.log(`Клиент ${client3.name} заказал(а): ${[...orders.get(client3)]}`);
+*/
+
+
+
+
+// class Auto {
+//     #horses = 0;
+
+//     constructor(power) {
+//         this.#horses = power;
+//     };
+
+//     set horses(value) {
+//         if (value < 0) throw new Error('Wrong! Horses must be more tnan zero');
+//         this.#horses = value;
+//     };
+
+//     get horses() {
+//         return this.#horses;
+//     };
+// };
+
+// let car = new Auto(100);
+// car.horses = 129;
+
+// console.log(car);
+
+
+// let obj = {
+//     name: 'Alex',
+//     age: 23,
+//     adress: {
+//         // city: 'Moscow',
+//         str: 'Sadovaya'
+//     },
+// };
+
+
+// console.log(obj.adress?.city ?? 'No city');
+
+
+
+
+
+/**
+ * Представьте, что у вас есть класс для управления библиотекой. В этом классе будет приватное свойство для хранения списка книг, а также методы для добавления книги, удаления книги и получения информации о наличии книги.
+
+Класс должен содержать приватное свойство #books, которое инициализируется пустым массивом и представляет собой список книг в библиотеке.
+
+Реализуйте геттер allBooks, который возвращает текущий список книг.
+
+Реализуйте метод addBook(title), который позволяет добавлять книгу в список. Если книга с таким названием уже существует в списке, выбросьте ошибку с соответствующим сообщением.
+
+Реализуйте метод removeBook(title), который позволит удалять книгу из списка по названию. Если книги с таким названием нет в списке, выбросьте ошибку с соответствующим сообщением.
+
+Реализуйте метод hasBook(title), который будет проверять наличие книги в библиотеке и возвращать true или false в зависимости от того, есть ли такая книга в списке или нет.
+
+Реализуйте конструктор, который принимает начальный список книг (массив) в качестве аргумента. Убедитесь, что предоставленный массив не содержит дубликатов; в противном случае выбрасывайте ошибку.
+
+
+
+class Library {
+    #books = [];
+
+    get allBooks() {
+        console.log(this.#books);
+    };
+
+    addBook(bookTitle) {
+        if (!this.#books.includes(bookTitle) && !undefined) {
+            this.#books.push(bookTitle);
+            console.log(`Книга с названием ${bookTitle} !ДОБАВЛЕНА! в список книг "BOOKStore"`);
+        } else {
+            throw new Error(`Книга с названием ${bookTitle} !УЖЕ ЕСТЬ! в списке книг`)
+        }
+    };
+
+    removeBook(bookTitle) {
+        try {
+            if (this.#books.includes(bookTitle)) {
+                this.#books.pop(bookTitle);
+                console.log(`Книга с названием ${bookTitle} !УДАЛЕНА! из списока книг "BOOKStore"`);
+            }
+
+        } catch (error) {
+            throw new Error(`Книги с названием ${bookTitle} !НЕТ! в списке книг "BOOKStore"`, error)
+        }
+    };
+
+    hasbook(bookTitle) {
+        console.log(this.#books.includes(bookTitle) ? true : false);
+    }
+
+
+
+    constructor(booklists) {
+        if (!Array.isArray(booklists)) {
+            throw new Error('Начальный список книг должен быть предоставлен в виде массива.');
+        };
+
+        const uniqueBooks = new Set(booklists);
+        if (uniqueBooks.size !== booklists.length) {
+            throw new Error('Начальный список книг не может содержать дубликатов.');
+        };
+        this.#books = booklists;
+    };
+};
+
+const booklists = new Library(['Жюль Вернь', 'Буратино', 'Пинокио']);
+booklists.allBooks;
+booklists.hasbook('Пинокио');
+// booklists.addBook('Пинокио');
+booklists.addBook('Пин');
+booklists.allBooks;
+booklists.removeBook('Пин');
+booklists.allBooks;
+
+ */
+
+
+
+
+
+
+/*
+Вы разрабатываете систему отзывов для вашего веб - сайта. Пользователи могут оставлять отзывы, но чтобы исключить слишком короткие или слишком длинные сообщения, вы решаете установить некоторые ограничения.
+
+Создайте HTML - структуру с текстовым полем для ввода отзыва, кнопкой для отправки и контейнером, где будут отображаться отзывы.
+
+Напишите функцию, которая будет добавлять отзыв в контейнер с отзывами. Однако если длина введенного отзыва менее 50 или более 500 символов, функция должна генерировать исключение.
+
+При добавлении отзыва, он должен отображаться на странице под предыдущими отзывами, а не заменять их.
+
+
+
+Вы можете использовать этот массив initialData для начальной загрузки данных при запуске вашего приложения.
+
+
+
+const initialData = [
+    {
+        product: "Apple iPhone 13",
+        reviews: [
+            { id: "1", text: "Отличный телефон! Батарея держится долго." },
+            { id: "2", text: "Камера супер, фото выглядят просто потрясающе." },
+        ],
+    },
+    {
+        product: "Samsung Galaxy Z Fold 3",
+        reviews: [{ id: "3", text: "Интересный дизайн, но дорогой." }],
+    },
+    {
+        product: "Sony PlayStation 5",
+        reviews: [{ id: "4", text: "Люблю играть на PS5, графика на высоте." }],
+    },
+];
+
+const userInput = document.querySelector('.user_input');
+const sendBtn = document.querySelector('.send_btn');
+const reviewsContainer = document.querySelector('.reviews');
+const errorMsg = document.querySelector('.error_msg');
+const productSelect = document.querySelector('.product_select');
+
+// 1️⃣ Функция для отображения отзывов выбранного продукта
+function displayReviews() {
+    reviewsContainer.innerHTML = ''; // Очищаем список
+
+    const selectedProduct = productSelect.value;
+    const productData = initialData.find(item => item.product === selectedProduct);
+
+    if (productData) {
+        const productTitle = document.createElement('h3');
+        productTitle.textContent = productData.product;
+        reviewsContainer.appendChild(productTitle);
+
+        productData.reviews.forEach(review => {
+            const reviewElem = document.createElement('p');
+            reviewElem.textContent = review.text;
+            reviewsContainer.appendChild(reviewElem);
+        });
+    }
+}
+
+// 2️⃣ Отображаем отзывы при изменении выбора продукта
+productSelect.addEventListener('change', displayReviews);
+
+// 3️⃣ Добавление нового отзыва
+sendBtn.addEventListener('click', function () {
+    try {
+        const reviewText = userInput.value.trim();
+
+        if (reviewText.length < 20 || reviewText.length > 500) {
+            throw new Error('Длина отзыва должна быть от 20 до 500 символов');
+        }
+
+        const selectedProduct = productSelect.value;
+        const productData = initialData.find(item => item.product === selectedProduct);
+
+        if (productData) {
+            const newReview = { id: Date.now().toString(), text: reviewText };
+            productData.reviews.push(newReview); // Добавляем в массив
+            displayReviews(); // Обновляем отображение
+        }
+
+        errorMsg.textContent = ''; // Очищаем ошибки
+        userInput.value = ''; // Очищаем поле ввода
+    } catch (error) {
+        errorMsg.textContent = error.message;
+    }
+});
+
+// 4️⃣ При загрузке страницы показываем отзывы первого продукта
+displayReviews();
+*/
+
+
+
+
+// let generatRandomNum = () => {
+//     return new Promise((resolve, reject) => {
+
+//         setTimeout(() => {
+//             let randomNum = Math.floor(Math.random() * 10) + 1;
+//             if (randomNum) resolve(randomNum);
+//             else reject('Ошибка в блоке генерации случайного числа');
+//         }, 0);
+//     })
+// };
+
+// generatRandomNum().then((result) => {
+//     console.log(result);
+// }).catch((err) => {
+//     console.log(err);
+// });
+
+
+
+
+
+// const fetchData = (url) => {
+//     return new Promise((resolve, reject) => {
+//         fetch(url)
+//             .then((response) => response.json())
+//             .then((data) => resolve(data))
+//             .catch((err) => reject(err));
+//     });
+// };
+
+
+// fetchData('https://jsonplaceholder.typicode.com/posts')
+//     .then(data => console.log(data))
+//     .catch(error => console.error('Ошибка:', error));
+
+
+
+
+
+
+
+// const calculateAB = (a, b) => {
+//     return new Promise((resolve) => {
+//         const sum = Number(a) + Number(b);
+//         resolve(sum)
+//     });
+// };
+
+// calculateAB(12, 4)
+//     .then((result) => console.log(result));
+
+
+
+// const devideNums = (a, b) => {
+//     return new Promise((resolve, reject) => {
+//         (b === 0) ? reject('На 0 делить нельзя') : resolve(a / b);
+//     });
+// };
+
+// devideNums(2, 4).then((result) => console.log(result)).catch((error) => console.error(error))
+
+
+
+
+
+// new Promise((resolve) => {
+//     setTimeout(() => resolve(1), 1000);
+// })
+//     .then((result) => {
+//         console.log(result); // 1
+//         return new Promise((resolve) => {
+//             setTimeout(() => resolve(result * 2), 1000);
+//         });
+//     })
+//     .then((result) => {
+//         console.log(result); // 2
+//         return new Promise((resolve) => {
+//             setTimeout(() => resolve(result * 2), 1000);
+//         });
+//     })
+//     .then((result) => {
+//         console.log(result); // 4
+//     });
