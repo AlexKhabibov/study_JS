@@ -3,6 +3,7 @@
 
 
 
+
 // const fetchData = new Promise((resolve, reject => { resolve('Hello') }));
 
 
@@ -176,3 +177,111 @@
 // performOperation('test')
 //     .then((result) => console.log(result))
 //     .catch((error) => console.error(error));
+
+
+
+
+// PROMISE.ALL
+
+
+// const promise1 = new Promise((resolve, reject) => setTimeout(() => {
+//     resolve('промис 1');
+// }, 0));
+
+
+// const promise2 = new Promise((resolve, reject) => setTimeout(() => {
+//     resolve('промис 2');
+// }, 500));
+
+// const promise3 = new Promise((resolve, reject) => setTimeout(() => {
+//     resolve('промис 3');
+// }, 0));
+
+
+// Promise.all([promise1, promise2, promise3])
+//     .then(console.log)
+//     .catch(console.log)
+
+
+
+
+
+
+
+// promise.all (отображаем все ответы от эндпоинтов)
+
+// const checkServerResponse = (urls) => {
+//     let allPromises = urls.map((url) => fetch(url));
+
+//     return Promise.all(allPromises)
+//         .then((responses) => Promise.all(responses.map(res => res.json())))
+// };
+
+// let urls = [
+//     'https://jsonplaceholder.typicode.com/posts/',
+//     'https://jsonplaceholder.typicode.com/todos/',
+//     'https://jsonplaceholder.typicode.com/users/'
+// ];
+
+// checkServerResponse(urls)
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error('Ошибка сервера', error))
+
+
+
+
+// promise.race (отображаем самый быстрый ответ от эндпоинта)
+
+// const checkServerResponse = (urls) => {
+//     let allPromises = urls.map((url) => fetch(url));
+
+//     return Promise.race(allPromises)
+//         .then((response) => response.json())
+// };
+
+// let urls = [
+//     'https://jsonplaceholder.typicode.com/posts/',
+//     'https://jsonplaceholder.typicode.com/todos/',
+//     'https://jsonplaceholder.typicode.com/users/'
+// ];
+
+// checkServerResponse(urls)
+//     .then((data) => console.log(data))
+//     .catch((error) => console.error('Ошибка сервера', error))
+
+
+
+
+
+
+// // создадим механиз орел и решка (50% успеха) и будем проверять что выпало
+// console.log('консоль начало');
+
+// const myPromise = new Promise((resolve, reject) => {
+//     Math.random() > 0.5 ? resolve("✅ Всё прошло успешно!") : reject("❌ Произошла ошибка!")
+// });
+
+// myPromise
+//     .then(result => console.log(result), error => console.log(error))
+//     // .catch(error => console.log(error)) // можем вообще не использовать, так как then на самом деле может принять два аргумента (onfulfilled и onrejected)
+//     .finally(() => console.log("🎉 Операция завершена!")); // в любом случае выводим этот текст в консоль
+
+// console.log('консоль конец'); // не заблокировалось стеком, так как промис асинхронный
+
+// // такая запись тоже имеет право на жизнь, так лучше отображается логика:
+// // .then(resolve => console.log(resolve)) 
+// // .catch(reject => console.log(reject))
+
+
+
+
+
+// new Promise((resolve, reject) => {
+//     resolve('1');
+//     reject('0');
+// }).then((resolve) => console.log(resolve)).catch((reject) => console.log(reject))
+
+
+
+
+
