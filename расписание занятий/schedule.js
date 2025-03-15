@@ -19,25 +19,25 @@
 const defaultData = `[
     {
         "name": "Жим лежа",
-        "time": "14-00",
+        "time": "14:00 - 14:30",
         "maxMembers": 10,
         "actualMembers": 6
     },
     {
         "name": "Бег",
-        "time": "14-00",
+        "time": "15:00 - 16:00",
         "maxMembers": 10,
         "actualMembers": 6
     },
     {
         "name": "Присяд",
-        "time": "14-00",
+        "time": "10:00 - 10:30",
         "maxMembers": 10,
         "actualMembers": 6
     },
     {
         "name": "Пресс",
-        "time": "14-00",
+        "time": "17:00 - 17:30",
         "maxMembers": 10,
         "actualMembers": 6
     }
@@ -62,6 +62,8 @@ function renderSchedule() {
         const buttonDisabled = isFull ? 'disabled' : '';
         const cancelButtonDisabled = item.actualMembers === 0 ? 'disabled' : '';
 
+        console.log(item.time);
+
         const card = `
         <div>
             <h3 class='text-center'>${item.name}</h3>
@@ -80,12 +82,10 @@ function renderSchedule() {
 // Запись на занятие
 function toggleBooking(index) {
     const classData = exerciseData[index];  // Получаем объект занятия по индексу
-    console.log('Before booking:', classData); // Логируем данные перед записью
 
     // Если есть свободные места, увеличиваем количество записавшихся
     if (classData.actualMembers < classData.maxMembers) {
         classData.actualMembers++;  // Увеличиваем количество записавшихся
-        console.log('After booking:', classData); // Логируем данные после записи
         saveToLocalStorage();  // Сохраняем изменения в localStorage
         renderSchedule();  // Перерисовываем расписание
     } else {
