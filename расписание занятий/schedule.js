@@ -16,6 +16,7 @@
 7. При разработке используйте Bootstrap для стилизации элементов. */
 
 // Строка JSON, которая будет хранить данные по умолчанию, если их нет в localStorage
+// Строка JSON, которая будет хранить данные по умолчанию, если их нет в localStorage
 const defaultData = `[
     {
         "name": "Жим лежа",
@@ -62,22 +63,36 @@ function renderSchedule() {
         const buttonDisabled = isFull ? 'disabled' : '';
         const cancelButtonDisabled = item.actualMembers === 0 ? 'disabled' : '';
 
-        console.log(item.time);
-
         const card = `
         <div>
             <h3 class='text-center'>${item.name}</h3>
             <p>Время: ${item.time}</p>
             <p>Записано: ${item.actualMembers} / ${item.maxMembers}</p>
-            <button ${buttonDisabled} class="btn btn-primary" onclick="toggleBooking(${index})">${buttonText}</button>
-            <button ${cancelButtonDisabled} class="btn btn-primary" onclick="cancelBooking(${index})">Отменить запись</button>
+            <button ${buttonDisabled} class="btn btn-primary" data-index="${index}">${buttonText}</button>
+            <button ${cancelButtonDisabled} class="btn btn-danger" data-index="${index}">Отменить запись</button>
         </div>
         <hr>
         `;
         scheduleContainer.innerHTML += card;
     });
-}
 
+    // Добавляем обработчики событий для кнопок
+    const buttons = scheduleContainer.querySelectorAll('button');
+    buttons.forEach(button => {
+        if (button.textContent === 'Записаться') {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                toggleBooking(index);
+            });
+        }
+        if (button.textContent === 'Отменить запись') {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                cancelBooking(index);
+            });
+        }
+    });
+};
 
 // Запись на занятие
 function toggleBooking(index) {
@@ -93,14 +108,13 @@ function toggleBooking(index) {
     }
 }
 
-
 // Функция для отмены записи
 function cancelBooking(index) {
     const classData = exerciseData[index];
     if (classData.actualMembers > 0) {
-        classData.actualMembers--;
+        classData.actualMembers--;  // Уменьшаем количество записавшихся
         saveToLocalStorage();  // Сохраняем изменения в localStorage
-        renderSchedule();
+        renderSchedule();  // Перерисовываем расписание
     }
 }
 
