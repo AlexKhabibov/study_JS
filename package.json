@@ -23,6 +23,7 @@
     "prop-types": "^15.8.1"
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "lodash": "^4.17.21"
   }
 }

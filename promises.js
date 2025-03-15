@@ -4,6 +4,8 @@
 
 
 
+
+
 // const fetchData = new Promise((resolve, reject => { resolve('Hello') }));
 
 
@@ -280,8 +282,5 @@
 //     resolve('1');
 //     reject('0');
 // }).then((resolve) => console.log(resolve)).catch((reject) => console.log(reject))
-
-
-
 
 

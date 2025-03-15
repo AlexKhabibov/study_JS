@@ -4,6 +4,7 @@
 
 
 
+
 // isFirstLetterBig = (text) => {
 //     if (text === '') {
 //         return '';
@@ -4184,6 +4185,31 @@ displayReviews();
 */
 
 
+
+
+
+
+
+/*
+// Работа с комментариями
+const replyBtns = document.querySelectorAll('.reply-btn');
+
+replyBtns.forEach(btn => {
+    btn.addEventListener('click', function () {
+        const commentEl = btn.closest('.comment');
+        const replyForm = commentEl.querySelector('.reply-form');
+
+        const allReplyForm = document.querySelectorAll('.reply-form');
+
+        allReplyForm.forEach(form => {
+            if (form !== replyForm) {
+                form.style.display = 'none';
+            }
+        });
+        replyForm.style.display = 'block';
+    });
+});
+*/
 
 
 
