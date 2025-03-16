@@ -4214,4 +4214,30 @@ replyBtns.forEach(btn => {
 
 
 
+// работа с JSON
+// import { jsonData } from "./jsonData.js";
 
+// const data = JSON.parse(jsonData);
+
+
+// data.forEach(element => {
+//     for (const key in element) {
+//         console.log(key, ':', element[key]);
+//     }
+// });
+
+
+
+// const newArr = data.map(item => item).flat();
+// console.log(newArr);
+
+
+
+
+
+// const select = document.forms.formName.selectForm;
+// const selectedEls = Array.from(select.options)
+//     .filter(item => item.selected)
+//     .map(item => item.value);
+
+//     console.log(selectedEls);
